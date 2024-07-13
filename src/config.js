@@ -6,8 +6,10 @@ const currentDirectory = process.cwd();
 const configFilePath = path.join(currentDirectory, "./.z18n.config.json");
 
 const defaultConfig = {
-	language: ["zh-CN", "en-US"],
-	workingPath: "./i18n",
+	originLang: "zh-CN",
+	targetLangs: ["en-US", "zh-TW", "ru-RU", "fr-FR"],
+	workingPath: "./example/page/i18n",
+	adapter: "Translated",
 };
 const defaultConfigContent = JSON.stringify(defaultConfig, null, 2);
 
