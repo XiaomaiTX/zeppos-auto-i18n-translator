@@ -6,75 +6,72 @@
 
 <br />
 <div align="center">
-  <a href="https://github.com/XiaomaiTX/zeppos-auto-i18n-translator">
-    <img src="logo.png" alt="Logo" width="80" height="80">
-  </a>
 
   <h3 align="center">ZeppOS Auto I18N Translator</h3>
 
   <p align="center">
     An auto i18n translation tool for ZeppOS
     <br />
-    <a href="https://github.com/XiaomaiTX/zeppos-auto-i18n-translator/blob/master/README_zh-CN.md"><strong>中文文档（在写了别催了） »</strong></a>
+    <a href="https://github.com/XiaomaiTX/zeppos-auto-i18n-translator/blob/master/README_zh-CN.md"><strong>中文文档</strong></a>
     <br />
     <br />
-    <a href="https://github.com/XiaomaiTX/zeppos-auto-i18n-translator/releases">Download</a>
-    ·
     <a href="https://github.com/XiaomaiTX/zeppos-auto-i18n-translator/issues">Report Bug</a>
     ·
     <a href="https://github.com/XiaomaiTX/zeppos-auto-i18n-translator/issues">Request Feature</a>
   </p>
 </div>
 
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The fx.js</a>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ol>
-</details>
-
 
 ## About The Project
 
-
-
-Use the <a href="#usage">Usage</a> to easily get started.
-
-
+A simple automatic i18n translation tool. You only need to write one .po file, and it will automatically generate .po files for other languages, helping developers quickly complete i18n translation tasks.
 
 
 ## Getting Started
 
-The content here will help you get familiar with the program quickly.
-
 ### Prerequisites
+
+You need to install Node.js and the required dependencies. For more details, please refer to [Installation](#installation).
 
 
 ### Installation
 
-
+```sh
+npm install @x1a0ma17x/zeppos-auto-i18n-translator -g
+```
 
 ## Usage
 
+After installation, run the following command to generate the configuration file:
 
+```sh
+z18n init
+```
+
+Configuration file parameters:
+
+| Parameter    | Description           | Type   | Example                                  |
+| ------------ | --------------------- | ------ | ---------------------------------------- |
+| originLang   | Original language     | string | zh-CN                                    |
+| targetLangs  | Target languages      | array  | ["en-US", "zh-TW", "ru-RU", "fr-FR"]     |
+| workingPath  | i18n folder path      | string | ./example/page/i18n                      |
+| adapter      | Translation channel   | string | Translated                               |
+
+Both `originLang` and `targetLangs` should be standard language codes. Refer to the [language codes supported by ZeppOS](https://docs.zepp.com/zh-cn/docs/reference/related-resources/language-list/) for more details.
+
+Currently supported adapters:
+
+| Adapter     | Description           |
+| ----------- | --------------------- |
+| Translated  | Translation channel   |
+
+Once the configuration file is set, simply run `z18n` to complete the translation.
 
 
 ## Roadmap
 
+- [ ] Support more adapters
+  - [ ] DeepL
 
 
 See the [open issues](https://github.com/XiaomaiTX/zeppos-auto-i18n-translator/issues) for a full list of proposed features (and known issues).
