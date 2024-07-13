@@ -47,15 +47,29 @@ async function translate(config) {
 						"utf8"
 					);
 				}
-				for (let k = 0; k < originFileContentArray.length; k++) {
-					const { msgstr } = originFileContentArray[k];
+				const targetFileContent = fs.readFileSync(
+					`${workingPath}/${targetLanguages[j]}.po`,
+					"utf8"
+				);
+				const targetFileContentArray = po2Array(targetFileContent);
+				console.log(originFileContentArray);
+				console.log(targetFileContentArray);
+				const msgidSet = new Set(
+					targetFileContentArray.map((item) => item.msgid)
+				);
+				const diffContentArray = originFileContentArray.filter(
+					(item) => !msgidSet.has(item.msgid)
+				);
+				console.log(diffContentArray);
+				for (let k = 0; k < diffContentArray.length; k++) {
+					const { msgstr } = diffContentArray[k];
 					try {
 						const result = await adapter[i].translate(
 							config.originLang,
 							targetLanguages[j],
 							msgstr
 						);
-						originFileContentArray[k].msgstr = result;
+						diffContentArray[k].msgstr = result;
 						console.log(
 							`Translate ${msgstr} -> ${result} in ${
 								targetLanguages[j]
@@ -65,10 +79,10 @@ async function translate(config) {
 						console.error(e);
 					}
 				}
-				const targetFileContent = array2po(originFileContentArray);
-				fs.writeFileSync(
+				const resultContent = array2po(diffContentArray);
+				fs.appendFileSync(
 					`${workingPath}/${targetLanguages[j]}.po`,
-					targetFileContent,
+					"\n\n" + resultContent,
 					"utf8"
 				);
 			}
