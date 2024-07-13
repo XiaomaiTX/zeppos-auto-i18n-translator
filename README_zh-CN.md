@@ -38,10 +38,10 @@ npm install @x1a0ma17x/zeppos-auto-i18n-translator -g
 
 ## 如何使用
 
-安装完成后，运行以下命令生成配置文件
+安装完成后，第一次运行`z18n`命令来生成配置文件
 
 ```sh
-z18n init
+z18n
 ```
 
 配置文件参数

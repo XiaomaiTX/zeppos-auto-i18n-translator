@@ -45,7 +45,7 @@ npm install @x1a0ma17x/zeppos-auto-i18n-translator -g
 After installation, run the following command to generate the configuration file:
 
 ```sh
-z18n init
+z18n
 ```
 
 Configuration file parameters:
