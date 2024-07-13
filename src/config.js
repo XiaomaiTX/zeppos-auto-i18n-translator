@@ -2,8 +2,8 @@ const fs = require("fs");
 const fsPromises = fs.promises;
 const path = require("path");
 
-const currentDirectory = __dirname;
-const configFilePath = path.join(currentDirectory, "../.z18n.conf");
+const currentDirectory = process.cwd();
+const configFilePath = path.join(currentDirectory, "./.z18n.config.json");
 
 const defaultConfig = {
 	language: ["zh-CN", "en-US"],
@@ -23,9 +23,9 @@ async function fetchConfig() {
 				defaultConfigContent,
 				"utf8"
 			);
-			console.log(".z18n.conf file created with default content.");
+			console.log(".z18n.config.json file created with default content.");
 		} catch (writeErr) {
-			console.error("Error writing .z18n.conf file:", writeErr);
+			console.error("Error writing .z18n.config.json file:", writeErr);
 			throw writeErr;
 		}
 	}
@@ -36,7 +36,10 @@ async function fetchConfig() {
 		const config = JSON.parse(data);
 		return config;
 	} catch (readErr) {
-		console.error("Error reading or parsing .z18n.conf file:", readErr);
+		console.error(
+			"Error reading or parsing .z18n.config.json file:",
+			readErr
+		);
 		throw readErr;
 	}
 }
