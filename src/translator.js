@@ -27,7 +27,8 @@ function array2po(array) {
 async function translate(config) {
 	const rootPath = ".";
 	const workingPath = `${rootPath}/${config.workingPath}`;
-	const originFileName = `${workingPath}/${config.originLang}.po`;
+	const originLang = config.originLang;
+	const originFileName = `${workingPath}/${originLang}.po`;
 	const originFileContent = fs.readFileSync(originFileName, "utf8");
 	const originFileContentArray = po2Array(originFileContent);
 	const translateCount = (originFileContent.match(/msgid/g) || []).length;
@@ -36,7 +37,7 @@ async function translate(config) {
 	for (let i = 0; i < adapter.length; i++) {
 		if (adapter[i].name === config.adapter) {
 			for (let j = 0; j < targetLanguages.length; j++) {
-				if (targetLanguages[j] === config.originLang) continue;
+				if (targetLanguages[j] === originLang) continue;
 				if (!fs.existsSync(`${workingPath}/${targetLanguages[j]}.po`)) {
 					console.log(
 						`Create ${targetLanguages[j]}.po in ${workingPath}...`
@@ -52,20 +53,18 @@ async function translate(config) {
 					"utf8"
 				);
 				const targetFileContentArray = po2Array(targetFileContent);
-				console.log(originFileContentArray);
-				console.log(targetFileContentArray);
 				const msgidSet = new Set(
 					targetFileContentArray.map((item) => item.msgid)
 				);
 				const diffContentArray = originFileContentArray.filter(
 					(item) => !msgidSet.has(item.msgid)
 				);
-				console.log(diffContentArray);
+				if (diffContentArray.length === 0) continue;
 				for (let k = 0; k < diffContentArray.length; k++) {
 					const { msgstr } = diffContentArray[k];
 					try {
 						const result = await adapter[i].translate(
-							config.originLang,
+							originLang,
 							targetLanguages[j],
 							msgstr
 						);
