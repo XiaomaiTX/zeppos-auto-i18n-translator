@@ -7,7 +7,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/XiaomaiTX/zeppos-auto-i18n-translator">
-    <img src="fx.js.png" alt="Logo" width="80" height="80">
+    <img src="logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">ZeppOS Auto I18N Translator</h3>

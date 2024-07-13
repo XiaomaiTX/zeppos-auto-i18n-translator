@@ -1,0 +1,6 @@
+msgid "welcome"
+msgstr "欢迎"
+msgid "settings"
+msgstr "设置"
+msgid "exit"
+msgstr "退出"

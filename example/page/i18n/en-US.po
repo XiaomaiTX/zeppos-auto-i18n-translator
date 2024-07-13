@@ -1,0 +1,8 @@
+msgid "welcome"
+msgstr "Welcome"
+
+msgid "settings"
+msgstr "Setting"
+
+msgid "exit"
+msgstr "Log Out"
