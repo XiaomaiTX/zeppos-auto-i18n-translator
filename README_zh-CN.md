@@ -68,6 +68,8 @@ originLang与targetLangs均为标准语言代码，可参考[ZeppOS中支持的�
 
 - [ ] 支持更多adapter
   - [ ] DeepL
+  - [ ] Google Translate
+  - [ ] OpenAI
 
 
 请参阅[open issues](https://github.com/XiaomaiTX/zeppos-auto-i18n-translator/issues)以获取提议功能（和已知问题）的完整列表。
@@ -101,7 +103,7 @@ originLang与targetLangs均为标准语言代码，可参考[ZeppOS中支持的�
 
 ## 联系作者
 
-XiaomaiTX - i@lenrome.cn
+XiaomaiTX - Me@XiaomaiTX.com
 
 项目地址: [https://github.com/XiaomaiTX/zeppos-auto-i18n-translator](https://github.com/XiaomaiTX/zeppos-auto-i18n-translator)
 

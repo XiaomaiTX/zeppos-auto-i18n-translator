@@ -72,6 +72,8 @@ Once the configuration file is set, simply run `z18n` to complete the translatio
 
 - [ ] Support more adapters
   - [ ] DeepL
+  - [ ] Google Translate
+  - [ ] OpenAI
 
 
 See the [open issues](https://github.com/XiaomaiTX/zeppos-auto-i18n-translator/issues) for a full list of proposed features (and known issues).
@@ -104,7 +106,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Contact
 
-XiaomaiTX - i@lenrome.cn
+XiaomaiTX - Me@XiaomaiTX.com
 
 Project Link: [https://github.com/XiaomaiTX/zeppos-auto-i18n-translator](https://github.com/XiaomaiTX/zeppos-auto-i18n-translator)
 
