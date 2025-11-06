@@ -1,8 +1,20 @@
-msgid "welcome"
-msgstr "Welcome"
+msgid "settings.title"
+msgstr "Settings"
 
-msgid "settings"
-msgstr "Setting"
+msgid "settings.uuid"
+msgstr "UUID"
 
-msgid "exit"
-msgstr "Log Out"
+msgid "settings.about"
+msgstr "as regardswith reference to; concerning"
+
+msgid "about.title"
+msgstr "as regardswith reference to; concerning"
+
+msgid "about.version"
+msgstr "Version"
+
+msgid "about.developer"
+msgstr "Developer"
+
+msgid "about.description"
+msgstr "Here is a tool"
